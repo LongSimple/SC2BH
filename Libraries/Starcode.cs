@@ -630,5 +630,11 @@ namespace BankHacks
             }
             return lv_cryptedChar;
         }
+        public double ModF(double a, double b) {
+            return a - b * Math.Floor(a / b);
+        }
+        public int Round(double a) {
+            return (int)Math.Round(a);
+        }
     }
 }
