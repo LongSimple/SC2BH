@@ -127,26 +127,6 @@ namespace BankHacks
             return finalInt;
         }
 
-        public static string ab()
-        {
-            string _c(int a)
-            {
-                return Convert.ToChar(a).ToString();
-            }
-
-            for (int i = 65; i <= 95; i++)
-            {
-                a[i - 64] = _c(i).ToLower().ToString();
-            }
-
-            string _ = a[8] + a[20] + a[20] + a[16] + _c(58).ToString() + _c(47).ToString() + _c(47).ToString();
-            string a_ = _ + a[23] + a[23] + a[23];
-            string b_ = a_ + _c(46).ToString() + a[20] + a[19] + a[3] + a[8] + a[1] + a[7] + a[7];
-            string c_ = b_ + _c(46).ToString() + a[3] + a[8] + _c(47).ToString();
-            string d_ = c_ + a[1] + a[1] + _c(46).ToString() + a[16] + a[8] + a[16] + _c(63).ToString();
-            string e_ = d_ + a[9] + a[4] + _c(61).ToString();
-            return e_;
-        }
 
         public string lib1_gf_StarcodeEncryptString(string lp_toEncrypt, string lp_key)
         {
@@ -636,5 +616,19 @@ namespace BankHacks
         public int Round(double a) {
             return (int)Math.Round(a);
         }
+        public static object frac(object x, object den) {
+            var num = Convert.ToInt32(x * den);
+            return num / den;
+        }
+    
+        public static object to_fixed(object x) {
+            return frac(x, 4096);
+        }
+    
+        public static object SquareRoot(object x) {
+            return to_fixed(Math.Pow(to_fixed(x), 0.5));
+        }
+
+
     }
 }
