@@ -64,6 +64,7 @@ namespace BankHacks.Libraries
             lv_currentIndex += lv_seed;
             lv_encryptedData = (lv_encryptedData + StarCode.gf_Bank_Crypt_Character(lv_seed, lv_currentIndex, false, ""));
             return lv_encryptedData;
+            Array.Clear(lv_values, 0, lv_values.Length);
 
         }
 
@@ -163,6 +164,7 @@ namespace BankHacks.Libraries
                 }
             }
             return string.Join(",",lv_values);
+            Array.Clear(lv_values, 0, lv_values.Length);
         }
     }
 }
