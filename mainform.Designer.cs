@@ -132,7 +132,7 @@
             this.MaximumSize = new System.Drawing.Size(783, 141);
             this.MinimumSize = new System.Drawing.Size(783, 141);
             this.Name = "mainform";
-            this.Text = "Desert Strike Bank Editor";
+            this.Text = "Desert Tank Battle Tool";
             this.ResumeLayout(false);
             this.PerformLayout();
 
