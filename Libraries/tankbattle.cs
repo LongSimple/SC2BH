@@ -26,26 +26,31 @@ namespace BankHacks.Libraries
 
         public string gf_Bank_Encrypt(string Decrypted_Bank, string Player_Handle)
         {
-             
+
             lv_seed = StarCode.StringToInt(StarCode.StringSub(Player_Handle, StarCode.StringLength(Player_Handle), StarCode.StringLength(Player_Handle)));
             lv_currentIndex = lv_seed;
             int[] lv_values = Decrypted_Bank.Split(',').Select(int.Parse).ToArray();
             lv_i = 0;
-            while ((lv_i < 8)) {
-                if ((lv_values[lv_i] == 0)) {
+            while ((lv_i < 8))
+            {
+                if ((lv_values[lv_i] == 0))
+                {
                     lv_numberOfZeroes = 8;
                 }
-                else {
+                else
+                {
                     lv_numberOfZeroes = (StarCode.StringLength(StarCode.IntToString((999999999 / lv_values[lv_i]))) - 1);
                 }
                 lv_charactersEncrypted = 0;
-                while ((lv_charactersEncrypted < lv_numberOfZeroes)) {
+                while ((lv_charactersEncrypted < lv_numberOfZeroes))
+                {
                     lv_encryptedData = (lv_encryptedData + StarCode.gf_Bank_Crypt_Character(0, lv_currentIndex, false, ""));
                     lv_currentIndex += (lv_seed + lv_charactersEncrypted);
                     lv_charactersEncrypted += 1;
                 }
                 lv_valueIndex = 1;
-                while ((lv_charactersEncrypted < 9)) {
+                while ((lv_charactersEncrypted < 9))
+                {
                     lv_encryptedData = (lv_encryptedData + StarCode.gf_Bank_Crypt_Character(StarCode.StringToInt(StarCode.StringSub(StarCode.IntToString(lv_values[lv_i]), lv_valueIndex, lv_valueIndex)), lv_currentIndex, false, ""));
                     lv_currentIndex += (lv_seed + lv_charactersEncrypted);
                     lv_charactersEncrypted += 1;
@@ -163,7 +168,7 @@ namespace BankHacks.Libraries
                     lv_decryptSuccess = false;
                 }
             }
-            return string.Join(",",lv_values);
+            return string.Join(",", lv_values);
             Array.Clear(lv_values, 0, lv_values.Length);
         }
     }

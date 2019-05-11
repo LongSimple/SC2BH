@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
-using BankHacks.Libraries;
 
 namespace BankHacks
 {
@@ -16,7 +14,7 @@ namespace BankHacks
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new mainform());
-            
+
         }
     }
 }
