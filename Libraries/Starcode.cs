@@ -616,19 +616,18 @@ namespace BankHacks
         public int Round(double a) {
             return (int)Math.Round(a);
         }
-        public static object frac(object x, object den) {
+        public double Frac(double x, double den) {
             var num = Convert.ToInt32(x * den);
             return num / den;
         }
-    
-        public static object to_fixed(object x) {
-            return frac(x, 4096);
+
+
+        public double to_fixed(double x) {
+            return Frac(x, 4096);
         }
-    
-        public static object SquareRoot(object x) {
+
+        public double SquareRoot(float x) {
             return to_fixed(Math.Pow(to_fixed(x), 0.5));
         }
-
-
     }
 }
