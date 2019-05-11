@@ -616,12 +616,9 @@ namespace BankHacks
         public int Round(double a) {
             return (int)Math.Round(a);
         }
-        public double Frac(double x) {
-            return Convert.ToInt32(x * 4096) / Convert.ToDouble(4096);
-        }
-
         public double SquareRoot(float x) {
-            return Frac(Math.Pow(Frac(x), 0.5));
+            double a = Math.Pow(Convert.ToInt32(x * 4096) / Convert.ToDouble(4096), 0.5);
+            return Convert.ToInt32(a * 4096) / Convert.ToDouble(4096);
         }
     }
 }
